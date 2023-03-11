@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { LogoLong, FormRow } from "../components";
+import { LogoLong, FormRow, Alert } from "../components";
 import Wrapper from "../assets/wrappers/RegisterPage";
 import { Link } from "react-router-dom";
 
@@ -8,6 +8,7 @@ const initialState = {
   email: "",
   password: "",
   isMember: true,
+  showAlert: true,
 };
 
 function Register() {
@@ -31,6 +32,7 @@ function Register() {
           </Link>
         </div>
         <h3>Login</h3>
+        {values.showAlert && <Alert />}
         {/* Name */}
         <FormRow
           type="text"
