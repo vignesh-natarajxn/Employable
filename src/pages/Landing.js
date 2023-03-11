@@ -1,6 +1,5 @@
-import logo from "../assets/logo.svg";
-import longlogo from "../assets/longlogo2.svg";
-import main from "../assets/main.svg";
+import { LogoLong } from "../components/";
+import main from "../assets/images/main.svg";
 // import styled from "styled-components";
 import Wrapper from "../assets/wrappers/LandingPage";
 
@@ -8,15 +7,7 @@ const Landing = () => {
   return (
     <Wrapper>
       <nav>
-        <img
-          src={longlogo}
-          alt="Employable"
-          className="logo"
-          style={{
-            height: "80%",
-          }}
-        />
-        {/* <img alt="Logo" className="logo" /> */}
+        <LogoLong />
       </nav>
       <div className="container page">
         <div className="info">
@@ -32,7 +23,7 @@ const Landing = () => {
             Track Your<span> Job Applications. </span>
           </h1>
           <p>
-            Effectively manage all your job applications through various
+            Effectively manage all your job applications through advanced
             features and analytics.
           </p>
           <button className="btn btn-hero">Login/Register</button>
