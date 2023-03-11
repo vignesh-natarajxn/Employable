@@ -4,22 +4,24 @@ import { LogoLong } from "../components";
 
 const Error = () => {
   return (
-    <Wrapper>
+    <Wrapper className="full-page">
       <div>
         <div
           style={{
             height: "100px",
             marginLeft: "60px",
-            marginTop: "30px",
-            marginBottom: "60px",
+            position: "absolute",
+            top: "30px",
           }}
         >
-          <LogoLong />
+          <Link to="/landing">
+            <LogoLong />
+          </Link>
         </div>
         <h1 style={{ fontSize: "200px" }}>404</h1>
         <h3>Page not found</h3>
         <p>We can't seem to find the page you're looking for</p>
-        <Link to="/">back home</Link>
+        <Link to="/">Back Home</Link>
       </div>
     </Wrapper>
   );
