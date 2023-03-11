@@ -5,7 +5,7 @@
 }
 
 /* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Roboto+Condensed:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin&family=Roboto+Condensed:wght@400;700&display=swap");
 
 html {
   font-size: 100%;
@@ -13,30 +13,34 @@ html {
 
 :root {
   /* colors */
-  --primary-50: #e0fcff;
-  --primary-100: #bef8fd;
-  --primary-200: #87eaf2;
-  --primary-300: #54d1db;
-  --primary-400: #38bec9;
-  --primary-500: #2cb1bc;
-  --primary-600: #14919b;
-  --primary-700: #0e7c86;
-  --primary-800: #0a6c74;
-  --primary-900: #044e54;
+  --primary: #ec9a29;
+  --primary-50: #f1d8b4;
+  --primary-100: #f0ca94;
+  --primary-200: #f3be74;
+  --primary-300: #eeae55;
+  --primary-400: #f0a63e;
+  /* --primary-500: #2cb1bc; */
+  --primary-500: #ec9a29;
+  --primary-600: #cc8520;
+  --primary-700: #bb7719;
+  --primary-800: #aa6d19;
+  --primary-900: #945c0f;
 
   /* grey */
+  --grey-0: #fff;
   --grey-50: #f0f4f8;
-  --grey-100: #d9e2ec;
-  --grey-200: #bcccdc;
-  --grey-300: #9fb3c8;
-  --grey-400: #829ab1;
-  --grey-500: #627d98;
-  --grey-600: #486581;
-  --grey-700: #334e68;
-  --grey-800: #243b53;
-  --grey-900: #102a43;
+  --grey-100: #ebebeb;
+  --grey-200: #dfdfdf;
+  --grey-300: #c0c0c0;
+  --grey-400: #b3b3b3;
+  --grey-500: #929292;
+  --grey-600: #7a7a7a;
+  --grey-700: #616161;
+  --grey-800: #4e4e4e;
+  --grey-900: #3b3b3b;
   /* rest of the colors */
-  --black: #222;
+  --black: #191919;
+  --bgmain: #191919;
   --white: #fff;
   --red-light: #f8d7da;
   --red-dark: #842029;
@@ -44,13 +48,13 @@ html {
   --green-dark: #0f5132;
 
   /* fonts  */
-  --headingFont: 'Roboto Condensed', Sans-Serif;
-  --bodyFont: 'Cabin', Sans-Serif;
+  --headingFont: "Roboto Condensed", Sans-Serif;
+  --bodyFont: "Cabin", Sans-Serif;
   --small-text: 0.875rem;
   --extra-small-text: 0.7em;
   /* rest of the vars */
-  --backgroundColor: var(--grey-50);
-  --textColor: var(--grey-900);
+  --backgroundColor: var(--bgmain);
+  --textColor: var(--grey-200);
   --borderRadius: 0.25rem;
   --letterSpacing: 1px;
   --transition: 0.3s ease-in-out all;
@@ -147,8 +151,8 @@ ul {
 
 .btn {
   cursor: pointer;
-  color: var(--white);
-  background: var(--primary-500);
+  color: var(--black);
+  background: var(--primary);
   border: transparent;
   border-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);
@@ -207,8 +211,9 @@ ul {
 
 .form {
   width: 90vw;
+  color: var(--grey-50);
   max-width: var(--fixed-width);
-  background: var(--white);
+  background: var(--black);
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow-2);
   padding: 2rem 2.5rem;
