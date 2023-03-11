@@ -2,17 +2,18 @@ import { useState, useEffect } from "react";
 import { LogoLong, FormRow, Alert } from "../components";
 import Wrapper from "../assets/wrappers/RegisterPage";
 import { Link } from "react-router-dom";
+import { useAppContext } from "../context/appContext";
 
 const initialState = {
   name: "",
   email: "",
   password: "",
   isMember: true,
-  showAlert: true,
 };
 
 function Register() {
   const [values, setValues] = useState(initialState); //global state
+  const { isLoading, showAlert } = useAppContext();
 
   const toggleMember = () => {
     setValues({ ...values, isMember: !values.isMember });
@@ -36,7 +37,7 @@ function Register() {
           </Link>
         </div>
         <h3>{values.isMember ? "Login" : "Register"}</h3>
-        {values.showAlert && <Alert />}
+        {showAlert && <Alert />}
         {/* Name */}
         {!values.isMember && (
           <FormRow
