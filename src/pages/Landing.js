@@ -8,8 +8,8 @@ const Landing = () => {
   return (
     <Wrapper>
       <nav>
-        <Link to="/register">
-          <LogoLong to="/register"/>
+        <Link to="/landing" style={{ height: "100%", marginTop: "40px" }}>
+          <LogoLong />
         </Link>
       </nav>
       <div className="container page">
