@@ -7,7 +7,7 @@ const LogoLong = () => {
       alt="Employable"
       className="logo"
       style={{
-        height: "80%",
+        height: "70%",
       }}
     />
   );

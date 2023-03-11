@@ -2,12 +2,15 @@ import { LogoLong } from "../components/";
 import main from "../assets/images/main.svg";
 // import styled from "styled-components";
 import Wrapper from "../assets/wrappers/LandingPage";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
     <Wrapper>
       <nav>
-        <LogoLong />
+        <Link to="/register">
+          <LogoLong to="/register"/>
+        </Link>
       </nav>
       <div className="container page">
         <div className="info">
@@ -26,7 +29,9 @@ const Landing = () => {
             Effectively manage all your job applications through advanced
             features and analytics.
           </p>
-          <button className="btn btn-hero">Login/Register</button>
+          <Link to="/register" className="btn btn-hero">
+            Login / Register
+          </Link>
         </div>
         <img src={main} alt="IMAGE" className="img main-img" />
       </div>
