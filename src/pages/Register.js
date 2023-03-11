@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { LogoLong } from "../components";
+import { LogoLong, FormRow } from "../components";
 import Wrapper from "../assets/wrappers/RegisterPage";
 import { Link } from "react-router-dom";
 
@@ -31,23 +31,29 @@ function Register() {
           </Link>
         </div>
         <h3>Login</h3>
-
-        <div className="form-row">
-          <label htmlFor="name" className="form-label">
-            name
-          </label>
-
-          <input
-            type="text"
-            value={values.name}
-            name="name"
-            onChange={handleChange}
-            className="form-input"
-          />
-        </div>
-
+        {/* Name */}
+        <FormRow
+          type="text"
+          name="name"
+          value={values.name}
+          handleChange={handleChange}
+        />
+        {/* Email */}
+        <FormRow
+          type="email"
+          name="email"
+          value={values.email}
+          handleChange={handleChange}
+        />
+        {/* Password */}
+        <FormRow
+          type="password"
+          name="password"
+          value={values.password}
+          handleChange={handleChange}
+        />
         <button type="submit" className="btn btn-block">
-          submit
+          Submit
         </button>
         <Link to="/landing">
           <button
