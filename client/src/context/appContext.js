@@ -1,5 +1,6 @@
 import React, { useReducer, useContext } from "react";
 import reducer from "./reducer";
+import axios from "axios";
 import {
   DISPLAY_ALERT,
   CLEAR_ALERT,
@@ -16,6 +17,7 @@ export const initialState = {
   user: null,
   token: null,
   userLocation: "",
+  jobLocation: "",
 };
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
@@ -36,7 +38,22 @@ const AppProvider = ({ children }) => {
   };
 
   const setupUser = async (currentUser) => {
-    console.log(currentUser);
+    dispatch({ type: SETUP_USER_BEGIN });
+    try {
+      const response = await axios.post("/api/v1/auth/register", currentUser);
+      console.log(response);
+      const { user, token, location } = response.data;
+      dispatch({
+        type: SETUP_USER_SUCCESS,
+        payload: { user, token, location },
+      });
+    } catch (error) {
+      dispatch({
+        type: SETUP_USER_ERROR,
+        payload: { msg: error.response.data.msg },
+      });
+    }
+    clearAlert();
   };
 
   return (
