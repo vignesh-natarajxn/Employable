@@ -82,10 +82,10 @@ const AppProvider = ({ children }) => {
     dispatch({ type: TOGGLE_SIDEBAR });
   };
 
-  const logoutUser = async () => {
-    await authFetch.get("/auth/logout");
-    dispatch({ type: LOGOUT_USER });
-  };
+  // const logoutUser = async () => {
+  //   await authFetch.get("/auth/logout");
+  //   dispatch({ type: LOGOUT_USER });
+  // };
 
   return (
     <AppContext.Provider
