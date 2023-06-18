@@ -1,10 +1,10 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
 const JobSchema = new mongoose.Schema(
   {
     company: {
       type: String,
-      required: [true, 'Please provide company'],
+      required: [true, 'Please provide company name'],
       maxlength: 50,
     },
     position: {
@@ -17,6 +17,7 @@ const JobSchema = new mongoose.Schema(
       enum: ['interview', 'declined', 'pending'],
       default: 'pending',
     },
+
     jobType: {
       type: String,
       enum: ['full-time', 'part-time', 'remote', 'internship'],
@@ -34,6 +35,6 @@ const JobSchema = new mongoose.Schema(
     },
   },
   { timestamps: true }
-)
+);
 
-export default mongoose.model('Job', JobSchema)
+export default mongoose.model('Job', JobSchema);
