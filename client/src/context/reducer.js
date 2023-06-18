@@ -211,4 +211,17 @@ const reducer = (state, action) => {
 
   throw new Error(`no such action :${action.type}`);
 };
+
+if (action.type === SHOW_STATS_BEGIN) {
+  return { ...state, isLoading: true, showAlert: false };
+}
+if (action.type === SHOW_STATS_SUCCESS) {
+  return {
+    ...state,
+    isLoading: false,
+    stats: action.payload.stats,
+    monthlyApplications: action.payload.monthlyApplications,
+  };
+}
+
 export default reducer;
