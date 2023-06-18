@@ -19,6 +19,7 @@ import {
   CREATE_JOB_ERROR,
   GET_JOBS_BEGIN,
   GET_JOBS_SUCCESS,
+  SET_EDIT_JOB,
 } from "./actions";
 
 const token = localStorage.getItem("token");
@@ -261,6 +262,7 @@ const AppProvider = ({ children }) => {
         clearValues,
         createJob,
         getJobs,
+        editJob,
       }}
     >
       {children}
