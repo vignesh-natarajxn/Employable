@@ -22,22 +22,28 @@ const getAllJobs = async (req, res) => {
     .status(StatusCodes.OK)
     .json({ jobs, totalJobs: jobs.length, numOfPages: 1 });
 };
+
 const updateJob = async (req, res) => {
   const { id: jobId } = req.params;
+  const { company, position, status } = req.body;
 
-  const { company, position } = req.body;
-
-  if (!company || !position) {
-    throw new BadRequestError("Please Provide All Values");
+  if (!position || !company) {
+    throw new BadRequestError("Please provide all values");
   }
-
   const job = await Job.findOne({ _id: jobId });
 
   if (!job) {
-    throw new NotFoundError(`No job with id ${jobId}`);
+    throw new NotFoundError(`No job with id :${jobId}`);
   }
 
   // check permissions
+  // req.user.userId (string) === job.createdBy(object)
+  // throw new UnAuthenticatedError('Not authorized to access this route')
+
+  // console.log(typeof req.user.userId)
+  // console.log(typeof job.createdBy)
+
+  checkPermissions(req.user, job.createdBy);
 
   const updatedJob = await Job.findOneAndUpdate({ _id: jobId }, req.body, {
     new: true,
