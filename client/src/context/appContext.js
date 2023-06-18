@@ -28,6 +28,15 @@ export const initialState = {
   userLocation: userLocation || "",
   jobLocation: userLocation || "",
   showSidebar: false,
+  isEditing: false,
+  editJobId: "",
+  position: "",
+  company: "",
+  // jobLocation
+  jobTypeOptions: ["full-time", "part-time", "remote", "internship"],
+  jobType: "full-time",
+  statusOptions: ["pending", "interview", "declined"],
+  status: "pending",
 };
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
@@ -122,16 +131,16 @@ const AppProvider = ({ children }) => {
   const updateUser = async (currentUser) => {
     dispatch({ type: UPDATE_USER_BEGIN });
     try {
-      const { data } = await authFetch.patch('/auth/updateUser', currentUser);
-  
+      const { data } = await authFetch.patch("/auth/updateUser", currentUser);
+
       // no token
       const { user, location } = data;
-  
+
       dispatch({
         type: UPDATE_USER_SUCCESS,
         payload: { user, location, token },
       });
-  
+
       addUserToLocalStorage({ user, location, token: initialState.token });
     } catch (error) {
       if (error.response.status !== 401) {
