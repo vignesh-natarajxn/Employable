@@ -58,6 +58,18 @@ export const initialState = {
   jobType: "full-time",
   statusOptions: ["pending", "interview", "declined"],
   status: "pending",
+  jobType: "full-time",
+  jobTypeOptions: ["full-time", "part-time", "remote", "internship"],
+  status: "pending",
+  statusOptions: ["pending", "interview", "declined"],
+  //
+  //
+  //
+  search: "",
+  searchStatus: "all",
+  searchType: "all",
+  sort: "latest",
+  sortOptions: ["latest", "oldest", "a-z", "z-a"],
 };
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
@@ -180,6 +192,7 @@ const AppProvider = ({ children }) => {
       payload: { name, value },
     });
   };
+
   const clearValues = () => {
     dispatch({ type: CLEAR_VALUES });
   };
@@ -286,6 +299,10 @@ const AppProvider = ({ children }) => {
     clearAlert();
   };
 
+  const clearFilters = () => {
+    console.log("clear filters");
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -303,13 +320,14 @@ const AppProvider = ({ children }) => {
         deleteJob,
         editJob,
         showStats,
+        clearFilters,
       }}
     >
       {children}
     </AppContext.Provider>
   );
 };
-// make sure use
+
 export const useAppContext = () => {
   return useContext(AppContext);
 };

@@ -24,16 +24,16 @@ const getAllJobs = async (req, res) => {
     createdBy: req.user.userId,
   };
 
-  if (status !== "all") {
+  if (status && status !== "all") {
     queryObject.status = status;
   }
-  if (jobType !== "all") {
+  if (jobType && jobType !== "all") {
     queryObject.jobType = jobType;
   }
   if (search) {
     queryObject.position = { $regex: search, $options: "i" };
   }
-  // NO AWAIT
+
   let result = Job.find(queryObject);
 
   // chain sort conditions
