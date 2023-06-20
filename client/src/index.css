@@ -178,7 +178,7 @@ ul {
 }
 .btn-hipster:hover {
   color: var(--black);
-  background: var(--grey-600);
+  background: var(--grey-500);
 }
 .btn-block {
   width: 100%;

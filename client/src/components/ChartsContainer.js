@@ -10,16 +10,19 @@ const ChartsContainer = () => {
   const { monthlyApplications: data } = useAppContext();
   return (
     <Wrapper>
-      <h4>Monthly Applications</h4>
-      <div>
-        <h3 style={{ display: "inline", color: "var(--primary)" }}>
-          {barChart ? "Bar Chart" : "Area Chart"}
-        </h3>
-      </div>
-      {barChart ? <BarChart data={data} /> : <AreaChart data={data} />}
-      <button type="button" onClick={() => setBarChart(!barChart)}>
+      <h3 style={{ display: "inline" }}>Monthly Applications - </h3>
+      <h3 style={{ display: "inline", color: "var(--primary)" }}>
+        {barChart ? "Bar Chart" : "Area Chart"}
+      </h3>
+      <div></div>
+      <button
+        style={{ marginTop: "15px", marginBottom: "10px" }}
+        type="button"
+        onClick={() => setBarChart(!barChart)}
+      >
         {barChart ? "Show Area Chart" : "Show Bar Chart"}
       </button>
+      {barChart ? <BarChart data={data} /> : <AreaChart data={data} />}
     </Wrapper>
   );
 };

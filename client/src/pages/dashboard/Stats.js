@@ -14,8 +14,6 @@ const Stats = () => {
   }
   return (
     <>
-      {" "}
-      <h2 style={{ paddingTop: "1.6rem" }}></h2>
       <StatsContainer />
       {monthlyApplications.length > 0 && <ChartsContainer />}
     </>
