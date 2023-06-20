@@ -42,16 +42,16 @@ const Wrapper = styled.article`
     }
   }
   .Pending {
-    background: #816511;
-    color: #ffcf5e;
+    background: #2e2e2e;
+    color: #ffc233;
   }
   .Interview {
-    background: #203258;
-    color: #9cb1ff;
+    background: #2e2e2e;
+    color: #5b7fff;
   }
   .Declined {
-    color: #ffa4a4;
-    background: #7d3131;
+    color: #ff5f5f;
+    background: #2e2e2e;
   }
   .content {
     padding: 1rem 1.5rem;
@@ -76,8 +76,9 @@ const Wrapper = styled.article`
     text-transform: capitalize;
     letter-spacing: var(--letterSpacing);
     text-align: center;
-    width: 100px;
-    height: 30px;
+    padding-top: 4px;
+    width: 150px;
+    /* height: 30px; */
   }
   footer {
     margin-top: 1rem;

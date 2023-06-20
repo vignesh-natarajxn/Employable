@@ -34,9 +34,9 @@ const Landing = () => {
               <span>University Applications. </span>
             </h1>
             <p>
-              Effectively manage all your job or university applications through
+              Effectively manage your job or university applications through
               advanced features and analytics. Create a new account for free, or
-              login now!
+              login as a guest now!
             </p>
             <Link to="/register" className="btn btn-hero">
               Login / Register
