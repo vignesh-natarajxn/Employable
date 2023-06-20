@@ -40,6 +40,8 @@ const JobsContainer = () => {
 
   return (
     <Wrapper>
+      {numOfPages > 1 && <PageBtnContainer />}
+
       {showAlert && <Alert />}
       <h5>
         {totalJobs} job{jobs.length > 1 && "s"} found
@@ -49,6 +51,7 @@ const JobsContainer = () => {
           return <Job key={job._id} {...job} />;
         })}
       </div>
+
       {numOfPages > 1 && <PageBtnContainer />}
     </Wrapper>
   );

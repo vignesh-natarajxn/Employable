@@ -9,7 +9,7 @@ const Wrapper = styled.section`
   flex-wrap: wrap;
   gap: 1rem;
   .btn-container {
-    background: var(--primary-100);
+    background: var(--bgmain3);
     border-radius: var(--borderRadius);
   }
   .pageBtn {
@@ -32,7 +32,7 @@ const Wrapper = styled.section`
   .next-btn {
     width: 100px;
     height: 40px;
-    background: var(--white);
+    background: var(--grey-600);
     border-color: transparent;
     border-radius: var(--borderRadius);
     color: var(--primary-500);

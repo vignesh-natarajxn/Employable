@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.article`
-  background: var(--white);
+  background: var(--bgmain3);
   border-radius: var(--borderRadius);
   display: grid;
   grid-template-rows: 1fr auto;
@@ -89,13 +89,13 @@ const Wrapper = styled.article`
     height: 30px;
   }
   .edit-btn {
-    color: var(--green-dark);
-    background: var(--green-light);
+    color: var(--white);
+    background: var(--green-dark);
     margin-right: 0.5rem;
   }
   .delete-btn {
-    color: var(--red-dark);
-    background: var(--red-light);
+    color: var(--white);
+    background: var(--red-dark);
   }
   &:hover .actions {
     visibility: visible;
