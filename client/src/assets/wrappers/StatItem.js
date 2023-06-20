@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.article`
   padding: 2rem;
-  background: var(--white);
+  background: var(--grey-700);
   border-radius: var(--borderRadius);
   border-bottom: 5px solid ${(props) => props.color};
   header {

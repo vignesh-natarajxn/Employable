@@ -35,11 +35,11 @@ html {
   --grey-400: #b3b3b3;
   --grey-500: #929292;
   --grey-600: #7a7a7a;
-  --grey-700: #616161;
-  --grey-800: #4e4e4e;
-  --grey-900: #3b3b3b;
+  --grey-700: #333333;
+  --grey-800: #242424;
+  --grey-900: #131313;
   /* rest of the colors */
-  --black: #191919;
+  --black: #000000;
   --bgmain: #191919;
   --white: #fff;
   --red-light: #f8d7da;

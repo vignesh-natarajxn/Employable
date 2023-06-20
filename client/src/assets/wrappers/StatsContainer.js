@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 const Wrapper = styled.section`
   display: grid;
+        background: var(--grey-800);
+
   row-gap: 2rem;
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;

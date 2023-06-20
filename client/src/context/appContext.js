@@ -83,7 +83,7 @@ const AppProvider = ({ children }) => {
       return response;
     },
     (error) => {
-      console.log(error.response)
+      console.log(error.response);
       if (error.response.status === 401) {
         // logoutUser();
       }
@@ -201,7 +201,7 @@ const AppProvider = ({ children }) => {
         },
       });
     } catch (error) {
-      console.log(error.response)
+      console.log(error.response);
       // logoutUser();
     }
     clearAlert();
@@ -259,7 +259,7 @@ const AppProvider = ({ children }) => {
         },
       });
     } catch (error) {
-      console.log(error.response)
+      console.log(error.response);
       // logoutUser();
     }
     clearAlert();
@@ -284,7 +284,7 @@ const AppProvider = ({ children }) => {
       });
     } catch (error) {
       if (error.response.status === 401) return;
-      console.log(error.response)
+      console.log(error.response);
       // logoutUser();
     }
   };

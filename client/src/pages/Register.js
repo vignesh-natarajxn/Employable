@@ -95,7 +95,7 @@ function Register() {
         </button>
         <button
           type="button"
-          className="btn btn-block btn-hipster"
+          className="btn btn-block"
           disabled={isLoading}
           onClick={() => {
             setupUser({
