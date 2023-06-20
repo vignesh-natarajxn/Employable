@@ -33,17 +33,20 @@ html {
   --grey-200: #dfdfdf;
   --grey-300: #c0c0c0;
   --grey-400: #b3b3b3;
-  --grey-500: #929292;
-  --grey-600: #7a7a7a;
+  --grey-500: #6c6c6c;
+  --grey-600: #494949;
   --grey-700: #333333;
   --grey-800: #242424;
   --grey-900: #131313;
   /* rest of the colors */
-  --black: #000000;
-  --bgmain: #1f1f1f;
+  --black: #191919;
+  --bgmain: #232323;
+  --bgmain2: var(--grey-800);
+  --bgmain3: var(--grey-700);
   --white: #fff;
   --red-light: #f8d7da;
   --red-dark: #842029;
+  --red-dark2: #631118;
   --green-light: #d1e7dd;
   --green-dark: #0f5132;
 
@@ -165,15 +168,16 @@ ul {
 }
 .btn:hover {
   background: var(--primary-700);
+  color: var(--black);
   box-shadow: var(--shadow-3);
 }
 .btn-hipster {
-  color: var(--primary-500);
-  background: var(--primary-200);
+  color: var(--grey-900);
+  background: var(--grey-400);
 }
 .btn-hipster:hover {
-  color: var(--primary-200);
-  background: var(--primary-700);
+  color: var(--black);
+  background: var(--grey-600);
 }
 .btn-block {
   width: 100%;
@@ -184,10 +188,10 @@ ul {
 }
 .btn-danger {
   background: var(--red-dark);
-  color: var(--red-dark);
+  color: var(--white);
 }
 .btn-danger:hover {
-  background: var(--red-light);
+  background: var(--red-dark2);
   color: var(--white);
 }
 /* alerts */
@@ -214,7 +218,7 @@ ul {
   width: 90vw;
   color: var(--grey-50);
   max-width: var(--fixed-width);
-  background: var(--black);
+  background: var(--bgmain3);
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow-2);
   padding: 2rem 2.5rem;

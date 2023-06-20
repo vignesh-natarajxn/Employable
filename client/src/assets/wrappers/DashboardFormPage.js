@@ -1,9 +1,9 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.section`
   border-radius: var(--borderRadius);
   width: 100%;
-  background: var(--white);
+  background: var(--bgmain3);
   padding: 3rem 2rem 4rem;
   box-shadow: var(--shadow-2);
   h3 {
@@ -40,10 +40,12 @@ const Wrapper = styled.section`
     }
   }
   .clear-btn {
+    color: var(--white);
     background: var(--grey-500);
   }
   .clear-btn:hover {
-    background: var(--black);
+    color: var(--white);
+    background: var(--grey-600);
   }
   @media (min-width: 992px) {
     .form-center {
@@ -63,6 +65,6 @@ const Wrapper = styled.section`
       margin-top: 0;
     }
   }
-`
+`;
 
-export default Wrapper
+export default Wrapper;

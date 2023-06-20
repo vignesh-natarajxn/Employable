@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.article`
   padding: 2rem;
-  background: var(--grey-700);
+  background: var(--bgmain3);
   border-radius: var(--borderRadius);
   border-bottom: 5px solid ${(props) => props.color};
   header {
@@ -36,6 +36,6 @@ const Wrapper = styled.article`
       color: ${(props) => props.color};
     }
   }
-`
+`;
 
-export default Wrapper
+export default Wrapper;

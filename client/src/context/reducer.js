@@ -124,8 +124,8 @@ const reducer = (state, action) => {
       position: "",
       company: "",
       jobLocation: state.userLocation,
-      jobType: "full-time",
-      status: "pending",
+      jobType: "Full-time",
+      status: "Pending",
     };
 
     return {
@@ -236,9 +236,9 @@ const reducer = (state, action) => {
     return {
       ...state,
       search: "",
-      searchStatus: "all",
-      searchType: "all",
-      sort: "latest",
+      searchStatus: "All",
+      searchType: "All",
+      sort: "Latest",
     };
   }
   if (action.type === CHANGE_PAGE) {

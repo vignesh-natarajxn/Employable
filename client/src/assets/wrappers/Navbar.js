@@ -26,7 +26,7 @@ const Wrapper = styled.nav`
     display: flex;
     align-items: center;
   }
-  background: var(--grey-800);
+  background: var(--bgmain2);
   .btn-container {
     position: relative;
   }
@@ -57,7 +57,7 @@ const Wrapper = styled.nav`
   .dropdown-btn {
     background: transparent;
     border-color: transparent;
-    color: var(--primary-500);
+    color: var(--grey-900);
     letter-spacing: var(--letterSpacing);
     text-transform: capitalize;
     cursor: pointer;

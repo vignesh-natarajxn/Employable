@@ -6,7 +6,7 @@ import FormRowSelect from "./FormRowSelect";
 import JobsContainer from "./JobsContainer";
 import Loading from "./Loading";
 import Logo from "./Logo";
-import LogoLong from "./Logo";
+import LogoLong from "./LogoLong";
 import Navbar from "./Navbar";
 import SearchContainer from "./SearchContainer";
 import SmallSidebar from "./SmallSidebar";

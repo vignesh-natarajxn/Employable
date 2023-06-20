@@ -35,7 +35,7 @@ const Profile = () => {
           <FormRow
             type="text"
             labelText="last name"
-            name="lastName"
+            name="Last Name"
             value={lastName}
             handleChange={(e) => setLastName(e.target.value)}
           />
