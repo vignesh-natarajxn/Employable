@@ -14,7 +14,15 @@ const Landing = () => {
       {user && <Navigate to="/" />}
       <Wrapper>
         <nav>
-          <Link to="/landing" style={{ height: "100%", marginTop: "40px" }}>
+          <Link
+            to="/landing"
+            style={{
+              height: "8rem",
+              marginTop: "90px",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
             <LogoLong />
           </Link>
         </nav>

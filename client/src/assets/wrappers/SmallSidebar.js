@@ -8,8 +8,8 @@ const Wrapper = styled.aside`
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 4rem;
-    max-height: 4rem;
+    /* max-width: 4rem; */
+    max-height: 3.5rem;
   }
   .sidebar-container {
     position: fixed;

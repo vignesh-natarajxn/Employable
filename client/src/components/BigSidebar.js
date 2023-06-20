@@ -1,6 +1,6 @@
 import { useAppContext } from "../context/appContext";
 import NavLinks from "./NavLinks";
-import Logo from "../components/Logo";
+import LogoLong from "../components/LogoLong";
 import Wrapper from "../assets/wrappers/BigSidebar";
 
 const BigSidebar = () => {
@@ -14,7 +14,7 @@ const BigSidebar = () => {
       >
         <div className="content">
           <header>
-            <Logo />
+            <LogoLong />
           </header>
           <NavLinks />
         </div>

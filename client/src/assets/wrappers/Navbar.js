@@ -10,8 +10,8 @@ const Wrapper = styled.nav`
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 4rem;
-    max-height: 4rem;
+    /* max-width: 4rem; */
+    max-height: 3.5rem;
   }
   .nav-center {
     display: flex;

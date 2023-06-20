@@ -6,8 +6,8 @@ const Wrapper = styled.aside`
     display: block;
     /* box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1); */
     .logo {
-      max-width: 4rem;
-      max-height: 4rem;
+      /* max-width: 12rem; */
+      max-height: 3.5rem;
     }
     .sidebar-container {
       background: var(--bgmain2);
