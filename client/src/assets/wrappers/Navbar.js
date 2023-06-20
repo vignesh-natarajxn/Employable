@@ -7,9 +7,11 @@ const Wrapper = styled.nav`
   justify-content: center;
   box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.1);
   .logo {
-    display: flex;
-    align-items: center;
-    width: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 4rem;
+    max-height: 4rem;
   }
   .nav-center {
     display: flex;
@@ -61,7 +63,7 @@ const Wrapper = styled.nav`
     border: transparent;
     border-radius: var(--borderRadius);
     letter-spacing: var(--letterSpacing);
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1rem;
     box-shadow: var(--shadow-2);
     transition: var(--transition);
     text-transform: capitalize;
@@ -70,7 +72,6 @@ const Wrapper = styled.nav`
 
   .dropdown-btn:hover {
     background: var(--grey-400);
-
   }
 
   .logo-text {
