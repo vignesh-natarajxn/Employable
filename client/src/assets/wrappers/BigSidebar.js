@@ -5,6 +5,10 @@ const Wrapper = styled.aside`
   @media (min-width: 992px) {
     display: block;
     /* box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1); */
+    .logo {
+      max-width: 4rem;
+      max-height: 4rem;
+    }
     .sidebar-container {
       background: var(--bgmain2);
       min-height: 100vh;
