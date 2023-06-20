@@ -31,7 +31,9 @@ const JobsContainer = () => {
   if (jobs.length === 0) {
     return (
       <Wrapper>
-        <h2>No jobs to display...</h2>
+        <h2 style={{ marginLeft: "auto", marginRight: "auto" }}>
+          No jobs to display
+        </h2>
       </Wrapper>
     );
   }

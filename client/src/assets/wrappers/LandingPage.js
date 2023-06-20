@@ -22,7 +22,7 @@ const Wrapper = styled.main`
     }
   }
   p {
-    color: var(--grey-600);
+    color: var(--grey-400);
   }
   .main-img {
     display: none;

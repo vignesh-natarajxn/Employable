@@ -34,7 +34,7 @@ const Wrapper = styled.aside`
     .nav-link {
       display: flex;
       align-items: center;
-      color: var(--grey-500);
+      color: var(--grey-400);
       padding: 1rem 0;
       padding-left: 2.5rem;
       text-transform: capitalize;
@@ -57,6 +57,7 @@ const Wrapper = styled.aside`
     }
     .active {
       color: var(--white);
+      background: var(--grey-700);
     }
     .active .icon {
       color: var(--primary-500);
