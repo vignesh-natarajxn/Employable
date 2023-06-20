@@ -4,7 +4,6 @@ import Wrapper from "../assets/wrappers/RegisterPage";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../context/appContext";
 import { useNavigate } from "react-router-dom";
-
 const initialState = {
   name: "",
   email: "",
@@ -12,7 +11,7 @@ const initialState = {
   isMember: true,
 };
 
-function Register() {
+const Register = () => {
   const navigate = useNavigate();
   const [values, setValues] = useState(initialState);
   const { user, isLoading, showAlert, displayAlert, setupUser } =
@@ -25,7 +24,6 @@ function Register() {
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
-
   const onSubmit = (e) => {
     e.preventDefault();
     const { name, email, password, isMember } = values;
@@ -67,7 +65,7 @@ function Register() {
         </div>
         <h3>{values.isMember ? "Login" : "Register"}</h3>
         {showAlert && <Alert />}
-        {/* Name */}
+        {/* name input */}
         {!values.isMember && (
           <FormRow
             type="text"
@@ -76,14 +74,15 @@ function Register() {
             handleChange={handleChange}
           />
         )}
-        {/* Email */}
+
+        {/* email input */}
         <FormRow
           type="email"
           name="email"
           value={values.email}
           handleChange={handleChange}
         />
-        {/* Password */}
+        {/* password input */}
         <FormRow
           type="password"
           name="password"
@@ -91,11 +90,11 @@ function Register() {
           handleChange={handleChange}
         />
         <button type="submit" className="btn btn-block" disabled={isLoading}>
-          Submit
+          submit
         </button>
         <button
           type="button"
-          className="btn btn-block"
+          className="btn btn-block btn-hipster"
           disabled={isLoading}
           onClick={() => {
             setupUser({
@@ -117,7 +116,6 @@ function Register() {
         </Link>
         <p>
           {values.isMember ? "Not a member yet?" : "Already a member?"}
-
           <button type="button" onClick={toggleMember} className="member-btn">
             {values.isMember ? "Register" : "Login"}
           </button>
@@ -125,6 +123,5 @@ function Register() {
       </form>
     </Wrapper>
   );
-}
-
+};
 export default Register;
