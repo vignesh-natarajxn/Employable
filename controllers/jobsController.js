@@ -53,7 +53,6 @@ const getAllJobs = async (req, res) => {
     result = result.sort("-position");
   }
 
-
   // pagination
   const page = Number(req.query.page) || 1;
   const limit = Number(req.query.limit) || 10;
@@ -118,9 +117,9 @@ const showStats = async (req, res) => {
   }, {});
 
   const defaultStats = {
-    pending: stats.pending || 0,
-    interview: stats.interview || 0,
-    declined: stats.declined || 0,
+    Pending: stats.Pending || 0,
+    Interview: stats.Interview || 0,
+    Declined: stats.Declined || 0,
   };
 
   let monthlyApplications = await Job.aggregate([
