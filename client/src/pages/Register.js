@@ -99,7 +99,7 @@ function Register() {
           disabled={isLoading}
           onClick={() => {
             setupUser({
-              currentUser: { email: "testuser@test.com", password: "secret" },
+              currentUser: { email: "test@test.com", password: "test123" },
               endPoint: "login",
               alertText: "Login Successful! Redirecting...",
             });

@@ -1,4 +1,5 @@
-import React, { useReducer, useContext } from "react";
+import React, { useReducer, useContext, useEffect } from "react";
+
 import reducer from "./reducer";
 import axios from "axios";
 import {
@@ -29,107 +30,76 @@ import {
   SHOW_STATS_SUCCESS,
   CLEAR_FILTERS,
   CHANGE_PAGE,
+  GET_CURRENT_USER_BEGIN,
+  GET_CURRENT_USER_SUCCESS,
 } from "./actions";
 
-const token = localStorage.getItem("token");
-const user = localStorage.getItem("user");
-const userLocation = localStorage.getItem("location");
-
-export const initialState = {
+const initialState = {
+  userLoading: true,
   isLoading: false,
   showAlert: false,
   alertText: "",
   alertType: "",
-  user: user ? JSON.parse(user) : null,
-  token: token,
-  userLocation: userLocation || "",
-  jobLocation: userLocation || "",
+  user: null,
+  userLocation: "",
   showSidebar: false,
   isEditing: false,
   editJobId: "",
   position: "",
   company: "",
+  jobLocation: "",
+  jobTypeOptions: ["full-time", "part-time", "remote", "internship"],
+  jobType: "full-time",
+  statusOptions: ["interview", "declined", "pending"],
+  status: "pending",
   jobs: [],
   totalJobs: 0,
   numOfPages: 1,
   page: 1,
   stats: {},
   monthlyApplications: [],
-  // jobLocation
-  jobTypeOptions: ["full-time", "part-time", "remote", "internship"],
-  jobType: "full-time",
-  statusOptions: ["pending", "interview", "declined"],
-  status: "pending",
-  jobType: "full-time",
-  jobTypeOptions: ["full-time", "part-time", "remote", "internship"],
-  status: "pending",
-  statusOptions: ["pending", "interview", "declined"],
-  //
-  //
-  //
   search: "",
   searchStatus: "all",
   searchType: "all",
   sort: "latest",
   sortOptions: ["latest", "oldest", "a-z", "z-a"],
 };
+
 const AppContext = React.createContext();
+
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  //axios
+  // axios
   const authFetch = axios.create({
     baseURL: "/api/v1",
   });
+  // request
 
-  //request interceptor
-  authFetch.interceptors.request.use(
-    (config) => {
-      config.headers["Authorization"] = `Bearer ${state.token}`;
-      return config;
-    },
-    (error) => {
-      return Promise.reject(error);
-    }
-  );
+  // response
 
-  // response interceptor
   authFetch.interceptors.response.use(
     (response) => {
       return response;
     },
     (error) => {
+      console.log(error.response)
       if (error.response.status === 401) {
-        logoutUser();
+        // logoutUser();
       }
       return Promise.reject(error);
     }
   );
 
   const displayAlert = () => {
-    dispatch({
-      type: DISPLAY_ALERT,
-    });
+    dispatch({ type: DISPLAY_ALERT });
     clearAlert();
   };
+
   const clearAlert = () => {
     setTimeout(() => {
-      dispatch({
-        type: CLEAR_ALERT,
-      });
+      dispatch({ type: CLEAR_ALERT });
     }, 3000);
-  };
-
-  const addUserToLocalStorage = ({ user, token, location }) => {
-    localStorage.setItem("user", JSON.stringify(user));
-    localStorage.setItem("token", token);
-    localStorage.setItem("location", location);
-  };
-
-  const removeUserFromLocalStorage = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    localStorage.removeItem("location");
   };
 
   const setupUser = async ({ currentUser, endPoint, alertText }) => {
@@ -153,7 +123,6 @@ const AppProvider = ({ children }) => {
     }
     clearAlert();
   };
-
   const toggleSidebar = () => {
     dispatch({ type: TOGGLE_SIDEBAR });
   };
@@ -162,21 +131,16 @@ const AppProvider = ({ children }) => {
     await authFetch.get("/auth/logout");
     dispatch({ type: LOGOUT_USER });
   };
-
   const updateUser = async (currentUser) => {
     dispatch({ type: UPDATE_USER_BEGIN });
     try {
       const { data } = await authFetch.patch("/auth/updateUser", currentUser);
-
-      // no token
       const { user, location } = data;
 
       dispatch({
         type: UPDATE_USER_SUCCESS,
-        payload: { user, location, token },
+        payload: { user, location },
       });
-
-      addUserToLocalStorage({ user, location, token: initialState.token });
     } catch (error) {
       if (error.response.status !== 401) {
         dispatch({
@@ -189,12 +153,8 @@ const AppProvider = ({ children }) => {
   };
 
   const handleChange = ({ name, value }) => {
-    dispatch({
-      type: HANDLE_CHANGE,
-      payload: { name, value },
-    });
+    dispatch({ type: HANDLE_CHANGE, payload: { name, value } });
   };
-
   const clearValues = () => {
     dispatch({ type: CLEAR_VALUES });
   };
@@ -222,8 +182,9 @@ const AppProvider = ({ children }) => {
   };
 
   const getJobs = async () => {
-    const { search, searchStatus, searchType, sort } = state;
-    let url = `/jobs?status=${searchStatus}&jobType=${searchType}&sort=${sort}`;
+    const { page, search, searchStatus, searchType, sort } = state;
+
+    let url = `/jobs?page=${page}&status=${searchStatus}&jobType=${searchType}&sort=${sort}`;
     if (search) {
       url = url + `&search=${search}`;
     }
@@ -240,7 +201,8 @@ const AppProvider = ({ children }) => {
         },
       });
     } catch (error) {
-      // logoutUser()
+      console.log(error.response)
+      // logoutUser();
     }
     clearAlert();
   };
@@ -248,7 +210,6 @@ const AppProvider = ({ children }) => {
   const setEditJob = (id) => {
     dispatch({ type: SET_EDIT_JOB, payload: { id } });
   };
-
   const editJob = async () => {
     dispatch({ type: EDIT_JOB_BEGIN });
 
@@ -272,17 +233,20 @@ const AppProvider = ({ children }) => {
     }
     clearAlert();
   };
-
   const deleteJob = async (jobId) => {
     dispatch({ type: DELETE_JOB_BEGIN });
     try {
       await authFetch.delete(`/jobs/${jobId}`);
       getJobs();
     } catch (error) {
-      logoutUser();
+      if (error.response.status === 401) return;
+      dispatch({
+        type: DELETE_JOB_ERROR,
+        payload: { msg: error.response.data.msg },
+      });
     }
+    clearAlert();
   };
-
   const showStats = async () => {
     dispatch({ type: SHOW_STATS_BEGIN });
     try {
@@ -295,7 +259,8 @@ const AppProvider = ({ children }) => {
         },
       });
     } catch (error) {
-      logoutUser();
+      console.log(error.response)
+      // logoutUser();
     }
     clearAlert();
   };
@@ -303,10 +268,29 @@ const AppProvider = ({ children }) => {
   const clearFilters = () => {
     dispatch({ type: CLEAR_FILTERS });
   };
-
   const changePage = (page) => {
     dispatch({ type: CHANGE_PAGE, payload: { page } });
   };
+
+  const getCurrentUser = async () => {
+    dispatch({ type: GET_CURRENT_USER_BEGIN });
+    try {
+      const { data } = await authFetch("/auth/getCurrentUser");
+      const { user, location } = data;
+
+      dispatch({
+        type: GET_CURRENT_USER_SUCCESS,
+        payload: { user, location },
+      });
+    } catch (error) {
+      if (error.response.status === 401) return;
+      console.log(error.response)
+      // logoutUser();
+    }
+  };
+  useEffect(() => {
+    getCurrentUser();
+  }, []);
 
   return (
     <AppContext.Provider
@@ -334,8 +318,8 @@ const AppProvider = ({ children }) => {
   );
 };
 
-export const useAppContext = () => {
+const useAppContext = () => {
   return useContext(AppContext);
 };
 
-export { AppProvider };
+export { AppProvider, initialState, useAppContext };
