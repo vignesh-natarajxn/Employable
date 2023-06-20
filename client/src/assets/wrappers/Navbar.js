@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.nav`
   height: var(--nav-height);
@@ -44,7 +44,7 @@ const Wrapper = styled.nav`
     top: 40px;
     left: 0;
     width: 100%;
-    background: var(--primary-100);
+    background: var(--grey-500);
     box-shadow: var(--shadow-2);
     padding: 0.5rem;
     text-align: center;
@@ -55,13 +55,24 @@ const Wrapper = styled.nav`
     visibility: visible;
   }
   .dropdown-btn {
-    background: transparent;
-    border-color: transparent;
-    color: var(--grey-900);
-    letter-spacing: var(--letterSpacing);
-    text-transform: capitalize;
     cursor: pointer;
+    color: var(--black);
+    background: var(--grey-200);
+    border: transparent;
+    border-radius: var(--borderRadius);
+    letter-spacing: var(--letterSpacing);
+    padding: 0.5rem 2rem;
+    box-shadow: var(--shadow-2);
+    transition: var(--transition);
+    text-transform: capitalize;
+    display: inline-block;
   }
+
+  .dropdown-btn:hover {
+    background: var(--grey-400);
+
+  }
+
   .logo-text {
     display: none;
     margin: 0;
@@ -80,5 +91,5 @@ const Wrapper = styled.nav`
       display: block;
     }
   }
-`
-export default Wrapper
+`;
+export default Wrapper;

@@ -31,7 +31,7 @@ const SearchContainer = () => {
       clearTimeout(timeoutID);
       timeoutID = setTimeout(() => {
         handleChange({ name: e.target.name, value: e.target.value });
-      }, 1000);
+      }, 400);
     };
   };
   const optimizedDebounce = useMemo(() => debounce(), []);

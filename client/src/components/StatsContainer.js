@@ -22,7 +22,7 @@ const StatsContainer = () => {
       bcg: "#e0e8f9",
     },
     {
-      title: "jobs declined",
+      title: "rejections/declined",
       count: stats.Declined || 0,
       icon: <FaBug />,
       color: "#d66a6a",

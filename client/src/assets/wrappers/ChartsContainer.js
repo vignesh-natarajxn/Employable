@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 const Wrapper = styled.section`
+  background: var(--bgmain2);
   margin-top: 4rem;
   text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
   button {
     cursor: pointer;
     color: var(--white);

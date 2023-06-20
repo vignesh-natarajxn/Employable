@@ -16,7 +16,7 @@ const ChartsContainer = () => {
       </h3>
       <div></div>
       <button
-        style={{ marginTop: "15px", marginBottom: "10px" }}
+        style={{ marginTop: "15px", marginBottom: "10px", width: "10rem" }}
         type="button"
         onClick={() => setBarChart(!barChart)}
       >

@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.aside`
   display: none;
   @media (min-width: 992px) {
     display: block;
-    box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1); */
     .sidebar-container {
       background: var(--bgmain2);
       min-height: 100vh;
@@ -41,13 +41,15 @@ const Wrapper = styled.aside`
       transition: var(--transition);
     }
     .nav-link:hover {
-      background: var(--black);
+      background: var(--bgmain);
       padding-left: 3rem;
       color: var(--grey-200);
     }
-    .nav-link:hover .icon {
+
+    /* .nav-link:hover .icon {
       color: var(--primary-500);
-    }
+    } */
+
     .icon {
       font-size: 1.5rem;
       margin-right: 1rem;
@@ -56,12 +58,13 @@ const Wrapper = styled.aside`
       transition: var(--transition);
     }
     .active {
+      padding-left: 3rem;
       color: var(--white);
-      background: var(--grey-700);
+      background: var(--bgmain);
     }
     .active .icon {
       color: var(--primary-500);
     }
   }
-`
-export default Wrapper
+`;
+export default Wrapper;
