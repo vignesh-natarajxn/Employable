@@ -38,7 +38,9 @@ const Wrapper = styled.nav`
     justify-content: center;
     gap: 0 0.5rem;
     position: relative;
+    color: white;
     box-shadow: var(--shadow-2);
+    background: var(--grey-500);
   }
 
   .dropdown {
