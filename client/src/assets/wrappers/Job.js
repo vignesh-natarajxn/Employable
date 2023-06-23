@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.article`
   background: var(--bgmain3);
@@ -53,6 +53,10 @@ const Wrapper = styled.article`
     color: #ff5f5f;
     background: #2e2e2e;
   }
+  .Selected {
+    color: #43d968;
+    background: #2e2e2e;
+  }
   .content {
     padding: 1rem 1.5rem;
   }
@@ -101,6 +105,6 @@ const Wrapper = styled.article`
   &:hover .actions {
     visibility: visible;
   }
-`
+`;
 
-export default Wrapper
+export default Wrapper;

@@ -1,6 +1,11 @@
 import { useAppContext } from "../context/appContext";
 import StatItem from "./StatItem";
-import { FaSuitcaseRolling, FaCalendarCheck, FaBug } from "react-icons/fa";
+import {
+  FaSuitcaseRolling,
+  FaCalendarCheck,
+  FaBug,
+  FaCheckCircle,
+} from "react-icons/fa";
 import Wrapper from "../assets/wrappers/StatsContainer";
 
 const StatsContainer = () => {
@@ -26,6 +31,13 @@ const StatsContainer = () => {
       count: stats.Declined || 0,
       icon: <FaBug />,
       color: "#d66a6a",
+      bcg: "#ffeeee",
+    },
+    {
+      title: "Seleected",
+      count: stats.Selected || 0,
+      icon: <FaCheckCircle />,
+      color: "#24a043",
       bcg: "#ffeeee",
     },
   ];

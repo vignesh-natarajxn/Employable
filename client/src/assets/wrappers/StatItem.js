@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.article`
   padding: 2rem;
+  max-width: 15rem;
   background: var(--bgmain3);
   border-radius: var(--borderRadius);
   border-bottom: 5px solid ${(props) => props.color};

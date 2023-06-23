@@ -14,7 +14,7 @@ const JobSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["Interview", "Declined", "Pending"],
+      enum: ["Interview", "Declined", "Pending", "Selected"],
       default: "Pending",
     },
     jobType: {

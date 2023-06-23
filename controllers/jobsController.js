@@ -120,6 +120,7 @@ const showStats = async (req, res) => {
     Pending: stats.Pending || 0,
     Interview: stats.Interview || 0,
     Declined: stats.Declined || 0,
+    Selected: stats.Selected || 0,
   };
 
   let monthlyApplications = await Job.aggregate([
