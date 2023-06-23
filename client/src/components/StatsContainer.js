@@ -27,14 +27,14 @@ const StatsContainer = () => {
       bcg: "#e0e8f9",
     },
     {
-      title: "rejections/declined",
+      title: "rejected applications",
       count: stats.Declined || 0,
       icon: <FaBug />,
       color: "#d66a6a",
       bcg: "#ffeeee",
     },
     {
-      title: "Seleected",
+      title: "selected applications",
       count: stats.Selected || 0,
       icon: <FaCheckCircle />,
       color: "#24a043",

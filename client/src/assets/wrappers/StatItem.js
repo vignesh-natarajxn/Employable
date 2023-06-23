@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const Wrapper = styled.article`
-  padding: 2rem;
-  max-width: 15rem;
+  padding: 1.2rem;
+  min-width: 17rem;
   background: var(--bgmain3);
   border-radius: var(--borderRadius);
   border-bottom: 5px solid ${(props) => props.color};
@@ -24,6 +24,7 @@ const Wrapper = styled.article`
     text-align: left;
     margin-top: 0.5rem;
   }
+
   .icon {
     width: 70px;
     height: 60px;

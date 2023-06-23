@@ -36,12 +36,12 @@ html {
   --grey-400: #b3b3b3;
   --grey-500: #6c6c6c;
   --grey-600: #494949;
-  --grey-700: #3c3c3c;
-  --grey-800: #242424;
+  --grey-700: #292929;
+  --grey-800: #292929;
   --grey-900: #131313;
   /* rest of the colors */
   --black: #191919;
-  --bgmain: #2e2e2e;
+  --bgmain: #212121;
   --bgmain2: var(--grey-800);
   --bgmain3: var(--grey-700);
   --white: #fff;
