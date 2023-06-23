@@ -10,34 +10,24 @@ import React from "react";
 const Landing = () => {
   const { user } = useAppContext();
   return (
-    <React.Fragment>
+    <div
+      style={{
+        margin: 0,
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+      }}
+    >
       {user && <Navigate to="/" />}
       <Wrapper>
-        <nav>
-          <Link
-            to="/landing"
-            style={{
-              height: "8rem",
-              marginTop: "90px",
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
-          >
-            <LogoLong />
-          </Link>
-        </nav>
         <div className="container page">
           {/* info */}
           <div className="info">
-            <h1
-              style={{
-                fontSize: "100px",
-                fontFamily: "fantasy",
-              }}
-            >
-              Employable
-            </h1>
-            <h1>
+            <Link to="/landing">
+              <LogoLong />
+            </Link>
+            <h1 style={{ marginTop: "2rem" }}>
               Track Your<span> Job </span> or{" "}
               <span>University Applications. </span>
             </h1>
@@ -53,7 +43,7 @@ const Landing = () => {
           <img src={main} alt="job hunt" className="img main-img" />
         </div>
       </Wrapper>
-    </React.Fragment>
+    </div>
   );
 };
 
