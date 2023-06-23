@@ -19,7 +19,7 @@ const Wrapper = styled.section`
     height: 40px;
     font-weight: 700;
     font-size: 1.25rem;
-    color: var(--primary-500);
+    color: var(--grey-300);
     transition: var(--transition);
     border-radius: var(--borderRadius);
     cursor: pointer;
@@ -32,10 +32,10 @@ const Wrapper = styled.section`
   .next-btn {
     width: 100px;
     height: 40px;
-    background: var(--grey-600);
+    background: var(--bgmain2);
     border-color: transparent;
     border-radius: var(--borderRadius);
-    color: var(--primary-500);
+    color: var(--grey-300);
     text-transform: capitalize;
     letter-spacing: var(--letterSpacing);
     display: flex;
@@ -47,7 +47,7 @@ const Wrapper = styled.section`
   }
   .prev-btn:hover,
   .next-btn:hover {
-    background: var(--primary-500);
+    background: var(--grey-600);
     color: var(--white);
   }
 `

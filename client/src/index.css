@@ -186,6 +186,20 @@ ul {
 .btn-hero {
   font-size: 1.25rem;
   padding: 0.5rem 1.25rem;
+  text-align: center;
+}
+.btn-temp {
+  /* background: transparent; */
+  background: rgb(123, 215, 123);
+  border: 2px solid rgb(123, 215, 123);
+  font-size: 1.25rem;
+  padding: 0.5rem 1.25rem;
+  text-align: center;
+}
+.btn-temp:hover {
+  background-color: rgb(56, 122, 56);
+  border: 2px solid rgb(56, 122, 56);
+  color: white;
 }
 .btn-danger {
   background: var(--red-dark);
