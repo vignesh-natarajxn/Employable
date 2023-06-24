@@ -10,7 +10,7 @@ const Wrapper = styled.main`
     align-items: center;
     border-bottom: 0.1rem solid #555;
     /* background: var(--bgmain2); */
-    margin-top: -3rem;
+    margin-top: -2.5rem;
   }
 
   .logo {

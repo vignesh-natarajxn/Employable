@@ -3,7 +3,7 @@ import StatItem from "./StatItem";
 import {
   FaSuitcaseRolling,
   FaCalendarCheck,
-  FaBug,
+  FaTimesCircle,
   FaCheckCircle,
 } from "react-icons/fa";
 import Wrapper from "../assets/wrappers/StatsContainer";
@@ -29,7 +29,7 @@ const StatsContainer = () => {
     {
       title: "rejected applications",
       count: stats.Declined || 0,
-      icon: <FaBug />,
+      icon: <FaTimesCircle />,
       color: "#d66a6a",
       bcg: "#ffeeee",
     },

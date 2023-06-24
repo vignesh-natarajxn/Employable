@@ -38,7 +38,7 @@ const Landing = () => {
           <div className="info">
             <h1 style={{ marginTop: "2rem" }}>
               Track Your<span> Job </span> or{" "}
-              <span>University Applications </span>Effectively. Elegantly.
+              <span>University Applications</span>. Effectively. Elegantly.
             </h1>
             <p>
               Manage your job or university applications through

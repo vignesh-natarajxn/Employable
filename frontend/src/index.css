@@ -190,15 +190,16 @@ ul {
 }
 .btn-temp {
   /* background: transparent; */
-  background: rgb(123, 215, 123);
-  border: 2px solid rgb(123, 215, 123);
+  background-color: rgb(56, 122, 56);
+  border: 2px solid rgb(56, 122, 56);
+  color: white;
   font-size: 1.25rem;
   padding: 0.5rem 1.25rem;
   text-align: center;
 }
 .btn-temp:hover {
-  background-color: rgb(56, 122, 56);
-  border: 2px solid rgb(56, 122, 56);
+  background-color: rgb(34, 87, 34);
+  border: 2px solid rgb(34, 87, 34);
   color: white;
 }
 .btn-danger {
