@@ -1,25 +1,50 @@
-version: "3"
+version: "3.8"
 services:
   frontend:
     build:
       context: "./frontend"
       dockerfile: Dockerfile
-    ports: -3000:3000
+    ports:
+      - 3000:3000
     container_name: frontend-container
     environment:
-      - WATCHPACK_POLLIGN=true
+      - WATCHPACK_POLLING=true
     networks:
-      - employable-networks
-    volumes: -./frontend:/app
+      - employable-network
+    volumes:
+      - ./frontend:/app
     depends_on:
       - backend
   backend:
     build:
       context: "./backend"
       dockerfile: Dockerfile
-    ports: -5000:5000
+    ports:
+      - 5000:5000
     container_name: backend-container
     networks:
-      - employable-networks
-    volumes: -./backend:/app
-networks: employable-networks
+      - employable-network
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    container_name: mongo-container
+    networks:
+      - employable-network
+    volumes:
+      - data:/data/db
+    env_file:
+      - ./.env
+    # environment:
+    #   - MONGO_INITDB_ROOT_USERNAME=
+    #   - MONGO_INITDB_ROOT_PASSWORD=
+    #   - MONGO_INITDB_DATABASE=Employable
+networks:
+  employable-network:
+    name: employable-network
+volumes:
+  data:
